@@ -2,6 +2,8 @@
 
 #### title: project
 
+#### title: project
+
 #### subtitle: 블로그 형
 
 #### author: Eunji Shin
