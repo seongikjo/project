@@ -1,36 +1,14 @@
-import React from "react";
-
-import Login from "../src/pages/login";
-import Home from "../src/pages/home";
-
-// class App extends React.Component {
-//   // state = {
-//   //   isLoading: true,
-//   //   home: [],
-//   // };
-//   // componentDidMount() {
-//   //   setTimeout(() => {
-//   //     this.setState({ isLoading: false });
-//   //   }, 6000);
-//   // }
-//   render() {
-//     // const { isLoading } = this.state;
-//     return (
-//       <div>
-//         {/* {isLoading ? "loading..." : <Login />} */}
-//         <Login />
-//         <Home />
-//       </div>
-//     );
-//   }
-// }
+import React from 'react'
+import GlobalStyles from './components/shared/global-styles'
+import Text from './components/shared/text'
 
 function App() {
   return (
     <div>
-      <Login />
-      <Home />
+      <GlobalStyles />
+      <Text>hello</Text>
     </div>
-  );
+  )
 }
-export default App;
+
+export default App

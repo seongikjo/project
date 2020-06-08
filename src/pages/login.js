@@ -3,14 +3,14 @@ import LoginHeader from '../components/login/header'
 import LoginBody from '../components/login/body'
 import LoginFooter from '../components/login/footer'
 
-import globalStyle from '../components/shared/global-styles'
+import GlobalStyle from '../components/shared/global-styles'
 
 import Container from '../components/shared/container'
 
 const Login = () => {
   return (
     <div>
-      <globalStyle />
+      <GlobalStyle />
       <Container>
         <LoginHeader />
         <LoginBody />
