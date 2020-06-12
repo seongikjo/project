@@ -38,6 +38,8 @@ SNS형태의 velog 블로그 입니다.
 
 #### title: project
 
+#### title: project
+
 #### subtitle: 블로그 형
 
 #### author: Eunji Shin
