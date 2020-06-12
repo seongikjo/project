@@ -28,16 +28,21 @@ export const changeField = createAction(
 
 export const initializeForm = createAction(INITIALIZE_FORM, (form) => form)
 
-export const register = createAction(REGISTER, ({ username, password }) => ({
-  username,
-  password,
-}))
+export const register = createAction(
+  REGISTER,
+  ({ usernick, username, password }) => ({
+    usernick,
+    username,
+    password,
+  }),
+)
 
 export const login = createAction(LOGIN, ({ username, password }) => ({
   username,
   password,
 }))
 
+// 사가 생성
 const registerSaga = createRequestSaga(REGISTER, authAPI.register)
 const loginSaga = createRequestSaga(LOGIN, authAPI.login)
 export function* authSaga() {
@@ -46,7 +51,7 @@ export function* authSaga() {
 }
 
 const initialState = {
-  reqister: {
+  register: {
     usernick: '',
     username: '',
     password: '',
@@ -56,6 +61,8 @@ const initialState = {
     username: '',
     password: '',
   },
+  auth: null,
+  authError: null,
 }
 
 const auth = handleActions(
@@ -64,24 +71,29 @@ const auth = handleActions(
       produce(state, (draft) => {
         draft[form][key] = value
       }),
+
     [INITIALIZE_FORM]: (state, { payload: form }) => ({
       ...state,
       [form]: initialState[form],
     }),
+    // 회원가입 성공
     [REGISTER_SUCCESS]: (state, { payload: auth }) => ({
       ...state,
       authError: null,
       auth,
     }),
+    // 회원가입 실패
     [REGISTER_FAILURE]: (state, { payload: error }) => ({
       ...state,
       authError: error,
     }),
+    // 로그인 성공
     [LOGIN_SUCCESS]: (state, { payload: auth }) => ({
       ...state,
       authError: null,
       auth,
     }),
+    // 로그인 실패
     [LOGIN_FAILURE]: (state, { payload: error }) => ({
       ...state,
       authError: error,

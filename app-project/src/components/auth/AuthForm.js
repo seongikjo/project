@@ -44,6 +44,13 @@ const Footer = styled.div`
   }
 `
 
+const ErrorMessage = styled.div`
+  color: red;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+`
+
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 1rem;
 `
@@ -53,56 +60,49 @@ const textMap = {
   register: '회원가입',
 }
 
-const AuthForm = ({ type, form, onChange, onSubmit }) => {
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type]
   return (
     <AuthFormBlock>
       <GlobalStyles />
       <h3>{text}</h3>
       <form onSubmit={onSubmit}>
-        <Text margin="0 0 6px 0">닉네임</Text>
         {type === 'register' && (
           <StyledInput
             autoComplete="usernick"
             name="usernick"
             placeholder="닉네임을 입력해주세요"
-            type="text"
+            // type="text"
             onChange={onChange}
             value={form.usernick}
           />
         )}
-        <Text margin="0 0 6px 0">이메일</Text>
         <StyledInput
           autoComplete="username"
           name="username"
           placeholder="이메일을 입력해주세요"
-          type="email"
           onChange={onChange}
           value={form.username}
         />
-        <Text margin="0 0 6px 0">비밀번호</Text>
         <StyledInput
           autoComplete="new-password"
           name="password"
           placeholder="비밀번호를 입력해주세요"
-          type="password"
+          // type="password"
           onChange={onChange}
           value={form.password}
         />
-        <Text margin="0 0 6px 0">비밀번호 확인</Text>
         {type === 'register' && (
           <StyledInput
             autoComplete="new-password"
             name="passwordConfirm"
             placeholder="비밀번호를 다시 입력해주세요"
-            type="password"
+            // type="password"
             onChange={onChange}
             value={form.passwordConfirm}
           />
         )}
-        <Text color="red" block margin="5px 0 0 0" bold>
-          입력한 비밀번호와 같은 값을 입력해주세요
-        </Text>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWithMarginTop cyan fullWidth>
           {text}
         </ButtonWithMarginTop>
@@ -115,7 +115,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
             </Text>
           </Link>
         ) : (
-          <Link to="/login"></Link>
+          <Link to="/login">로그인</Link>
         )}
       </Footer>
     </AuthFormBlock>
