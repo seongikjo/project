@@ -82,7 +82,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           name="username"
           placeholder="이메일을 입력해주세요"
           onChange={onChange}
-          value={form.username}
+          // value={form.username}
         />
         <StyledInput
           autoComplete="new-password"
