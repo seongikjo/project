@@ -1,15 +1,14 @@
 import React from 'react'
 import HeaderContainer from '../components/common/HeaderContainer'
+import PostListContainer from '../containers/posts/PostListContainer'
 
-import Button from '../components/common/Button'
-
-const PostList = () => {
+const PostListPage = () => {
   return (
     <div>
       <HeaderContainer />
-      <Button>버튼</Button>
+      <PostListContainer />
     </div>
   )
 }
 
-export default PostList
+export default PostListPage

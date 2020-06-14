@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Blog Project
 
 SNS형태의 velog 블로그 입니다.
@@ -28,23 +27,3 @@ SNS형태의 velog 블로그 입니다.
 - AWS
 - REACT.js
 - JAVA
-=======
-# Project
-
-#### title: project
-#### title: project
-
-#### title: project
-
-#### title: project
-
-#### title: project
-
-#### subtitle: 블로그 형
-
-#### author: Eunji Shin
-
-#### date: 2020-06-01 00:00:00
-
-#### tags: javascript, react, java, frontend, backend, server, DB
->>>>>>> bcd676598e7bf3ea9445944f5ae050f5283c4049
