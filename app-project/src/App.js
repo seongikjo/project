@@ -1,22 +1,25 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-
-import PostList from './pages/postlistPage'
-import Post from './pages/post'
-import Login from './pages/login'
-import Register from './pages/register'
-import Write from './pages/write'
+import PostListPage from './pages/PostListPage'
+import LoginPage from './pages/Login'
+import RegisterPage from './pages/register'
+import WritePage from './pages/write'
+import PostPage from './pages/PostPage'
+import { Helmet } from 'react-helmet-async'
 
 const App = () => {
   return (
     <>
-      <Route component={PostList} path={['/@:username', '/']} exact />
-      <Route component={Post} path="/post" />
-      <Route component={Write} path="/write" />
-      <Route component={Login} path="/login" />
-      <Route component={Register} path="/register" />
+      <Helmet>
+        <title>REACTERS</title>
+      </Helmet>
+
+      <Route component={PostListPage} path={['/@:username', '/']} exact />
+      <Route component={LoginPage} path="/login" />
+      <Route component={RegisterPage} path="/register" />
+      <Route component={WritePage} path="/write" />
+      <Route component={PostPage} path="/@:username/:postId" />
     </>
   )
 }
-
 export default App

@@ -5,8 +5,8 @@ import createRequestSaga, {
   createRequestActionTypes,
 } from '../lib/createRequestSaga'
 
-const TEMP_SET_USER = 'user/TEMP_SET_USER'
-
+const TEMP_SET_USER = 'user/TEMP_SET_USER' // 새로고침 이후 임시 로그인 처리
+// 회원 정보 확인
 const [CHECK, CHECK_SUCCESS, CHECK_FAILURE] = createRequestActionTypes(
   'user/CHECK',
 )
@@ -20,7 +20,7 @@ const checkSaga = createRequestSaga(CHECK, authAPI.check)
 
 function checkFailureSaga() {
   try {
-    localStorage.removeItem('user')
+    localStorage.removeItem('user') // localStorage 에서 user 제거하고
   } catch (e) {
     console.log('localStorage is not working')
   }
@@ -28,8 +28,8 @@ function checkFailureSaga() {
 
 function* logoutSaga() {
   try {
-    yield call(authAPI.logout)
-    localStorage.removeItem('user')
+    yield call(authAPI.logout) // logout API 호출
+    localStorage.removeItem('user') // localStorage 에서 user 제거
   } catch (e) {
     console.log(e)
   }
@@ -55,6 +55,7 @@ export default handleActions(
     [CHECK_SUCCESS]: (state, { payload: user }) => ({
       ...state,
       user,
+      checkError: null,
     }),
     [CHECK_FAILURE]: (state, { payload: error }) => ({
       ...state,
