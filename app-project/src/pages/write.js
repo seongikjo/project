@@ -1,21 +1,22 @@
 import React from 'react'
-// import Editor from '../components/write/Editor'
 import Responsive from '../components/common/Responsive'
-import WriteActionButtons from '../components/write/WriteActionButton'
 import EditorContainer from '../containers/write/EditorContainer'
 import TagBoxContainer from '../containers/write/TagBoxContainer'
 import WriteActionButtonsContainer from '../containers/write/WriteActionButtonsContainer'
+import { Helmet } from 'react-helmet-async'
 
-const Write = () => {
+const WritePage = () => {
   return (
     <Responsive>
+      <Helmet>
+        <title>글 작성하기 - REACTERS</title>
+      </Helmet>
+
       <EditorContainer />
-      {/* <Editor /> */}
       <TagBoxContainer />
-      <WriteActionButtons />
       <WriteActionButtonsContainer />
     </Responsive>
   )
 }
 
-export default Write
+export default WritePage

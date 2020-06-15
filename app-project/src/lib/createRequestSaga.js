@@ -12,20 +12,21 @@ export default function createRequestSaga(type, request) {
   const FAILURE = `${type}_FAILURE`
 
   return function* (action) {
-    yield put(startLoading(type))
+    yield put(startLoading(type)) // 로딩 시작
     try {
       const response = yield call(request, action.payload)
       yield put({
         type: SUCCESS,
         payload: response.data,
+        meta: response,
       })
     } catch (e) {
       yield put({
         type: FAILURE,
-        payload: 0,
+        payload: e,
         error: true,
       })
     }
-    yield put(finishLoading(type))
+    yield put(finishLoading(type)) // 로딩 끝
   }
 }

@@ -1,14 +1,14 @@
 import React from 'react'
-import HeaderContainer from '../components/common/HeaderContainer'
+import HeaderContainer from '../containers/common/HeaderContainer'
 import PostViewerContainer from '../containers/post/PostViewerContainer'
 
-const Post = () => {
+const PostPage = () => {
   return (
-    <div>
+    <>
       <HeaderContainer />
       <PostViewerContainer />
-    </div>
+    </>
   )
 }
 
-export default Post
+export default PostPage
