@@ -12,9 +12,9 @@ const buttonStyle = css`
   color: white;
   outline: none;
   cursor: pointer;
-  background: ${palette.gray[8]};
+  background: ${palette.mint[0]};
   &:hover {
-    background: ${palette.gray[6]};
+    background: ${palette.mint[1]};
   }
   ${(props) =>
     props.fullWidth &&
@@ -27,13 +27,13 @@ const buttonStyle = css`
   ${(props) =>
     props.cyan &&
     css`
-      background: ${palette.cyan[5]};
+      background: ${palette.mint[0]};
       &:hover {
-        background: ${palette.cyan[4]};
+        background: ${palette.mint[1]};
       }
     `}
     &:disabled {
-    background: ${palette.gray[3]};
+    background: ${palette.mint[0]};
     color: ${palette.gray[5]};
     cursor: not-allowed;
   }
