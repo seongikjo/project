@@ -22,8 +22,13 @@ SNS형태의 velog 블로그 입니다.
 - 김승렬 (Server)
 - 신은지 (Front-End)
 
-## t
+##
 
 - AWS
 - REACT.js
 - JAVA
+
+### 유지보수
+
+- 좋아요, 댓글 기능 추가 안됨
+- 메인 post card list 오류 발생 - proxy error
